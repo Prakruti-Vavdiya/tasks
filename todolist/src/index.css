@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+ul, li {
+  list-style: none;
+  margin: 5px 15px;
+  padding: 5px;
+  width: 94%;
+}
+
+li{
+    border: solid #aaa 1px;
+
+}
+.done{
+  text-decoration-line: line-through;
+  color: #aaa;
+}
+div#root {
+ margin: 100px auto;
+ width: 50%;
+ height: ;
+ background-color: #eee;
+ border-radius: 15px;
+ box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
