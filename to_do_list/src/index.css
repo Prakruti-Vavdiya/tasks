@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+ul, li {
+  list-style: none;
+  margin: 5px 15px;
+  padding: 5px;
+  width: 94%;
+}
+
+li{
+	display: inline;
+    border: solid #aaa 1px;
+
+}
+.checked{
+  text-decoration-line: line-through;
+  color: #aaa;
+  margin: 5px 15px 5px 15px;
+}
+
+.unchecked{
+	margin: 5px 15px 5px 15px;
+}
+div#root {
+ margin: 20px auto;
+ width: 50%;
+ height: ;
+ background-color: #eee;
+ border-radius: 15px;
+ box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Clear{
+	width: 170px;
+    height: 35px;
+    background-color: #bbb;
+    font-weight: bold;
+    border: 2px solid #555;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+.List {
+    border-style:solid;
+    width: 90%;
+    list-style: none;
+    display: flex;
+}
+
+.List span {
+    cursor: pointer;
+}
+
+
+.List button
+{
+	width: 70px;
+    height: 30px;
+}
+
+.submit{
+	width: 100px;
+    height: 40px;
+    margin: 15px;
+    background-color: #bbb;
+    border: 2px solid #555;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.Edit {
+	position: absolute;
+	right: 480px;
+    margin-right: 10px;
+    border-radius: 3px;
+    background-color: #0d5;
+    font-weight: bold;
+}
+.Delete{
+	position: absolute;
+	right: 410px;
+	border-radius: 3px;
+	background-color: #f66;
+	font-weight: bold;
+}
+
+
+.Checkbox {
+    position: relative;
+    top:5px;
+    margin: 5px;
+}
+
+#form input {
+    width: 400px;
+    height: 30px;
+    padding: 3px 20px;
+    margin: 15px;
+    font-size: 20px;
+    
+  }
+  
+  #form input::placeholder{
+  
+    font-size: 20px;
+  }
+  

@@ -18,12 +18,13 @@
 } 
 .screen-row input{ 
 	width: 410px; 
-	background: #7d6; 
+	background-color: #7d6; 
 	border: 0px; 
 	color: #222; 
 	padding: 10px; 
 	text-align: right;
 	height: 30px; 
+	font-size: 25px;
 } 
 .buttons
 {
@@ -32,17 +33,22 @@
 
 input[type="button"]{ 
 width: 100px; 
-background: #ccc; 
-border: 1px solid #222; 
-padding: 10px 20px; 
-color: black; 
-text-align: center; 
-text-decoration: none; 
+background-color: #ccc; 
+border: 2px solid #222; 
+border-radius: 5px;
+padding: 5px 10px;   
 display: inline-block; 
-font-size: 20px;
+font-size: 25px;
 margin: 2px; 
 } 
 
 input[type="button"]:active{ 
-	background: #ccc; 
+	background-color: #999; 
 } 
+
+#spaceFiller{
+	width: 100px;
+	height: 30px; 
+	float: right;
+	margin: 2px;
+}

@@ -1,4 +1,3 @@
-// Imports. 
 import React from 'react'; 
 import CalculatorTitle from './CalculatorTitle.js'; 
 import OutputScreen from './OutputScreen.js'; 
@@ -7,21 +6,19 @@ import Button from './Button.js';
 class Calculator extends React.Component { 
 	constructor() { 
 		super(); 
-		// set our default state 
 		this.state = 
 		{ 
 			question: '', 
 			answer: ''
 		} 
 		this.handleClick = this.handleClick.bind(this); 
-		console.log(this.state);
 	} 
 
 	handleClick(event){ 
 
 		// get the value from the target element (button) 
 		const value = event.target.value; 
-		console.log("value="+value);
+		
 		switch (value) { 
 			case '=': { 
 
@@ -41,16 +38,16 @@ class Calculator extends React.Component {
 						this.setState({answer: "Math Error"}); 
 					else
 						this.setState({ answer: ans , question: ''});
-				console.log(this.state); 
+				
 				break; 
 			} 
-			console.log(this.state);
+			
 			break;
 			} 
 
 			case 'Clear': { 
 			this.setState({ question: '', answer: '' }); 
-			console.log(this.state);
+			
 			break; 
 			} 
 
@@ -58,15 +55,53 @@ class Calculator extends React.Component {
 			var str = this.state.question; 
 				str = str.substr(0,str.length-1); 
 				this.setState({question: str});
-				console.log(this.state); 
+				
 				break; 
+			} 
+
+			case 'Square': { 
+				try
+					{ 
+						ans = eval(this.state.question); 
+					} 
+					catch(err) 
+					{ 
+						this.setState({answer: "Math Error"}); 
+					} 
+					if (ans===undefined) 
+						this.setState({answer: "Math Error"}); 
+					else
+					{
+						ans=String(Math.pow(ans,2));
+						this.setState({ question: '', answer: ans }); 
+					}
+			break; 
+			}
+
+			case 'Root': { 
+			try
+					{ 
+						ans = eval(this.state.question); 
+					} 
+					catch(err) 
+					{ 
+						this.setState({answer: "Math Error"}); 
+					} 
+					if (ans===undefined) 
+						this.setState({answer: "Math Error"}); 
+					else
+					{
+						ans=String(Math.pow(ans,0.5));
+						this.setState({ question: '', answer: ans }); 
+					}
+			break; 
 			} 
 
 			default: { 
 
 				// for every other command, update the answer in the state 
 				this.setState({ question: this.state.question += value}) 
-				console.log(this.state);
+				
 				break; 
 			} 
 		} 
@@ -81,6 +116,7 @@ class Calculator extends React.Component {
 				<div className="mainCalc"> 
 					<OutputScreen question={this.state.question} answer={this.state.answer}/> 
 					<div className="buttons">
+						
 						<div className="button-row"> 
 							<Button label={'Clear'} handleClick = {this.handleClick} /> 
 							<Button label={'Delete'} handleClick = {this.handleClick} /> 
@@ -111,7 +147,16 @@ class Calculator extends React.Component {
 
 						<div className="button-row"> 
 							<Button label={'0'} handleClick = {this.handleClick} /> 
-							<Button label={'='} handleClick = {this.handleClick} /> 
+							<Button label={'('} handleClick = {this.handleClick} />
+							<Button label={')'} handleClick = {this.handleClick} />
+							<Button label={'='} handleClick = {this.handleClick} />							
+						</div>
+
+						<div className="button-row"> 
+							<Button label={'%'} handleClick = {this.handleClick} /> 
+							<Button label={'Square'} handleClick = {this.handleClick} /> 
+							<Button label={'Root'} handleClick = {this.handleClick} /> 
+							<div id="spaceFiller"></div>
 						</div>
 					</div> 
 				</div> 
