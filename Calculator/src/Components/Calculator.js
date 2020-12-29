@@ -1,20 +1,15 @@
-import React from 'react'; 
-import CalculatorTitle from './CalculatorTitle.js'; 
+import React from 'react';
 import OutputScreen from './OutputScreen.js'; 
 import Button from './Button.js'; 
 
 class Calculator extends React.Component { 
-	constructor() { 
-		super(); 
-		this.state = 
+		state = 
 		{ 
 			question: '', 
-			answer: ''
-		} 
-		this.handleClick = this.handleClick.bind(this); 
-	} 
-
-	handleClick(event){ 
+			answer: '',
+			newCalculation:true
+		} ;
+	handleClick=(event)=>{ 
 
 		// get the value from the target element (button) 
 		const value = event.target.value; 
@@ -25,19 +20,12 @@ class Calculator extends React.Component {
 			// if it's an equal sign, use the eval module to evaluate the question ,convert the answer (in number) to String 
 			if (this.state.question!=='') 
 			{ 
-				var ans=''; 
-					try
-					{ 
-						ans = eval(this.state.question); 
-					} 
-					catch(err) 
-					{ 
-						this.setState({answer: "Math Error"}); 
-					} 
-					if (ans===undefined) 
-						this.setState({answer: "Math Error"}); 
-					else
-						this.setState({ answer: ans , question: ''});
+				let ans= eval(this.state.question);  
+				
+				if (ans===undefined) 
+					this.setState({answer: "Math Error"}); 
+				else
+					this.setState({ answer: ans , newCalculation:true});
 				
 				break; 
 			} 
@@ -60,6 +48,7 @@ class Calculator extends React.Component {
 			} 
 
 			case 'Square': { 
+				let ans='';
 				try
 					{ 
 						ans = eval(this.state.question); 
@@ -73,12 +62,13 @@ class Calculator extends React.Component {
 					else
 					{
 						ans=String(Math.pow(ans,2));
-						this.setState({ question: '', answer: ans }); 
+						this.setState({ newCalculation:true, answer: ans }); 
 					}
 			break; 
 			}
 
 			case 'Root': { 
+			let ans='';
 			try
 					{ 
 						ans = eval(this.state.question); 
@@ -92,15 +82,22 @@ class Calculator extends React.Component {
 					else
 					{
 						ans=String(Math.pow(ans,0.5));
-						this.setState({ question: '', answer: ans }); 
+						this.setState({ newCalculation:true, answer: ans }); 
 					}
 			break; 
 			} 
 
 			default: { 
+				if(this.state.newCalculation==true)
+				{
+					this.setState({ question: this.state.question = value, newCalculation:false, answer:''})
 
+				}
 				// for every other command, update the answer in the state 
-				this.setState({ question: this.state.question += value}) 
+				else
+				{
+					this.setState({ question: this.state.question += value}) 
+				}
 				
 				break; 
 			} 
@@ -112,7 +109,7 @@ class Calculator extends React.Component {
 	{ 
 		return ( 
 			<div className="frame"> 
-				<CalculatorTitle value="Calculator"/> 
+				<h1>Calculator</h1> 
 				<div className="mainCalc"> 
 					<OutputScreen question={this.state.question} answer={this.state.answer}/> 
 					<div className="buttons">
