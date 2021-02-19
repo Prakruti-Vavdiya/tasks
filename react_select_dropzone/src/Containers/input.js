@@ -3,10 +3,10 @@ import ReactSelect from '../components/reactSelect';
 import DropZone from '../components/dropZone';
 class Input extends Component{
     state={
-        select:'user1'
+        user:''
     }
     handleSelectChange=(val)=>{
-        this.setState({select:val.value});
+        this.setState({user:val.value});
         
     }
     handleDropZoneChange=(val)=>{
@@ -35,6 +35,7 @@ class Input extends Component{
                 onChange={(val)=>this.handleSelectChange(val)}
             />
             <DropZone change={this.handleDropZoneChange}/>
+            <h4>User:</h4>{this.state.user}
             </div>
         );
 

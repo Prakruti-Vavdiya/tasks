@@ -19,8 +19,8 @@ const DropZone=(props)=>{
             </div>
 
             <div>
-              <h4>Files</h4>
-              <ul>{files}</ul>
+              <h4>Files:</h4>
+              <ol>{files}</ol>
             </div>
 
           </div>

@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: #e9f1ff;
+  border: 1px solid #c9e1ef;
+  margin: 10px auto;
+  width: 90%;
+}
+.Input{
+  font-weight: bold;
+}
+select {
+    display: inline-block;
+    padding: 4px 3px 5px 5px;
+    width: 30%;
+    font-size: 25px;
+    margin:20px 5px 10px 10px;
+    outline: none;
+    border: 1px solid #C8BFC4;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px #ddd8dc;
+}
+
+button{
+  padding: 5px;
+  width:130px;
+  font-size: 25px;
+  margin-left: 30px;
+  background-color: #8dc1ef;
+  outline: none;
+  border-radius: 4px; 
+}
+.wish img{
+  margin:10px;
+  height: 380px;
+}
+.card{
+  display: inline-block;
+  border:2px solid #ade1ef;
+  background-color: #8dc1ef;
+  width:20%;
+  font-weight: bold;
+  font-size: 70px;
+  margin: 130px 20px 30px 20px;
+  
+}
+
+.card p{
+  font-size: 30px;
+  font-weight: normal;
+  padding: 15px;
+  margin-bottom: 0;
+  background-color: #007c92;
+}
