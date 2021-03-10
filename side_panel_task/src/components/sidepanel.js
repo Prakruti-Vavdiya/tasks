@@ -5,7 +5,7 @@ import FormInput from "../UI/FormInput";
 class SidePanel extends Component{
 
     render(){
-        let editForm=(
+        let Form=(
             <div style={{margin:'30px 10px 0 10px'}}>
                     <FormInput type="text"
                                 placeholder="Enter your name...."
@@ -27,7 +27,7 @@ class SidePanel extends Component{
         return (
             <div>
                 <Sidebar
-                    sidebar={editForm}
+                    sidebar={Form}
                     open={this.props.sidebarOpen}
                     onSetOpen={this.props.onSetSidebarOpen}
                     pullRight={true}
